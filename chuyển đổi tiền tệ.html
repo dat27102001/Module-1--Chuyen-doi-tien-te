@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <form>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+           </tr>
+        <tr>
+            <td><input type="number" id="amount"></td>
+            <td>
+                <select name="From Currency" id="fromCurrency">
+                    <option value="1" >Việt Nam</option>
+                    <option value="23000" >USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="To Currency" id="toCurrency">
+                    <option value="23000" >USD</option>
+                    <option value="1">Việt Nam</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <input type="button" value="Sumbit" onclick=" convert()">
+        </tr>
+        <p id="result"></p>
+    </form>
+</table>
+<script>
+    function convert() {
+    let input = +(document.getElementById('amount').value);
+        from = +(document.getElementById('fromCurrency').value);
+        to = +(document.getElementById('toCurrency').value);
+        document.getElementById('result').innerHTML=input*from/to
+    }
+</script>
+</body>
+</html>
